@@ -18,15 +18,17 @@
     <div class="row mt-2">
       <div class="col text-center">
         <button id="btnNewGame" class="btn btn-danger">Nuevo Juego</button>
-        <button id="btnRequestCard" class="btn btn-primary">Pedir Carta</button>
-        <button id="btnStop" class="btn btn-primary">Detener</button>
+        <button id="btnRequestCard" class="btn btn-primary" disabled>
+          Pedir Carta
+        </button>
+        <button id="btnStop" class="btn btn-primary" disabled>Detener</button>
       </div>
     </div>
 
     <div class="row container">
       <div class="col">
         <h1>Jugador 1 - <small>0</small></h1>
-        <div id="player-cards">
+        <div id="player-cards" class="divCards">
           <!-- <img class="carta" src="./assets/cartas/10D.png" alt="" /> -->
         </div>
       </div>
@@ -35,12 +37,16 @@
     <div class="row container mt-2">
       <div class="col">
         <h1>Computadora - <small>0</small></h1>
-        <div id="pc-cards">
+        <div id="pc-cards" class="divCards">
           <!-- <img class="carta" src="./assets/cartas/10D.png" alt="" /> -->
         </div>
       </div>
     </div>
 
     <script src="assets/js/juego.js" type="module"></script>
+    <script type="module">
+      import { initGame } from "./assets/js/juego.js";
+      initGame();
+    </script>
   </body>
 </html>
