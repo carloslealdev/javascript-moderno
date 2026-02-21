@@ -5,13 +5,22 @@ import { heroes } from "../data/heroes";
  * @param {HTMLDivElement} element
  */
 export const callbacksComponent = (element) => {
-  const id = "5d86371f233c9f2425f16916";
-  findHero(id, (error, someHero) => {
+  const id1 = "5d86371f233c9f2425f16916";
+  const id2 = "5d86371f2343e37870b91ef1";
+
+  findHero(id1, (error, someHero1) => {
     if (error) {
       element.innerHTML = error;
       return;
     }
-    element.innerHTML = someHero.name;
+
+    findHero(id2, (error, someHero2) => {
+      if (error) {
+        element.innerHTML = error;
+        return;
+      }
+      element.innerHTML = `${someHero1.name} / ${someHero2.name}`;
+    });
   });
 };
 
